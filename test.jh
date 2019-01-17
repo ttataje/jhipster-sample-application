@@ -1,0 +1,27 @@
+entity Teacher {
+	teacherId Long,
+    teacherName String,
+    teacherSurname String
+}
+
+entity Course {
+	courseId Long,
+    courseName String,
+    courseLevel String
+}
+
+enum CourseLevel {
+	BASICO, AVANZADO, PRO
+}
+
+relationship OneToMany {
+	Teacher{course} to Course
+}
+
+relationship OneToMany {
+	CourseLevel{course} to Course
+}
+
+// Set pagination options
+paginate Course with infinite-scroll
+paginate Teacher with pagination
