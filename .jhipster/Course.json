@@ -1,0 +1,35 @@
+{
+    "name": "Course",
+    "fields": [
+        {
+            "fieldName": "courseId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "courseName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "courseLevel",
+            "fieldType": "CourseLevel",
+            "fieldValues": "BASICO,AVANZADO,PRO"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "teacher",
+            "otherEntityName": "teacher",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190117223838",
+    "entityTableName": "course",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
