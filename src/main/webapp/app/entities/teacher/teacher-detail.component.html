@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="teacher">
+            <h2><span>Teacher</span> {{teacher.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Teacher Id</span></dt>
+                <dd>
+                    <span>{{teacher.teacherId}}</span>
+                </dd>
+                <dt><span>Teacher Name</span></dt>
+                <dd>
+                    <span>{{teacher.teacherName}}</span>
+                </dd>
+                <dt><span>Teacher Surname</span></dt>
+                <dd>
+                    <span>{{teacher.teacherSurname}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/teacher', teacher.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+{
+    "name": "Teacher",
+    "fields": [
+        {
+            "fieldName": "teacherId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "teacherName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "teacherSurname",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "course",
+            "otherEntityName": "course",
+            "otherEntityRelationshipName": "teacher"
+        }
+    ],
+    "changelogDate": "20190117223354",
+    "entityTableName": "teacher",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

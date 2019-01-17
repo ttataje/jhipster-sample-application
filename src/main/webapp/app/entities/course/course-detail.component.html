@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="course">
+            <h2><span>Course</span> {{course.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Course Id</span></dt>
+                <dd>
+                    <span>{{course.courseId}}</span>
+                </dd>
+                <dt><span>Course Name</span></dt>
+                <dd>
+                    <span>{{course.courseName}}</span>
+                </dd>
+                <dt><span>Course Level</span></dt>
+                <dd>
+                    <span>{{course.courseLevel}}</span>
+                </dd>
+                <dt><span>Teacher</span></dt>
+                <dd>
+                    <div *ngIf="course.teacher">
+                        <a [routerLink]="['/teacher', course.teacher?.id, 'view']">{{course.teacher?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/course', course.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
